@@ -2,6 +2,7 @@
 
 import * as bin from './index';
 import config from '../../../config.json';
+import { about } from './cmd/cmdAbout';
 
 // Help
 export const help = async (args: string[]): Promise<string> => {
@@ -29,14 +30,7 @@ export const repo = async (args: string[]): Promise<string> => {
 };
 
 // About
-export const about = async (args: string[]): Promise<string> => {
-  return `Hi, I am ${config.name}. 
-Welcome to my website!
-More about me:
-'sumfetch' - short summary.
-'resume' - my latest resume.
-'readme' - my github readme.`;
-};
+export { about };
 
 export const resume = async (args: string[]): Promise<string> => {
   window.open(`${config.resume_url}`);
