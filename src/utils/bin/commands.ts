@@ -10,7 +10,8 @@ import { about } from './cmd/cmdAbout';
 export const help = async (args: string[]): Promise<string> => {
   const commands = Object.keys(bin).sort().join(', ');  
   return `Bienvenue, voici la liste des commandes : 
-  draper hotz mckinnon mitnick poulsen anonymous lazarus mafiaboy dragon sandworm bear help sumfetch
+  draper hotz mckinnon mitnick poulsen anonymous lazarus 
+  mafiaboy dragon sandworm bear help sumfetch
 
 [ctrl+l]/clear: clear le terminal.\n
 Utilisez 'sumfetch' pour afficher le résumé.
@@ -45,6 +46,25 @@ export const poulsen = async (args?: string[]): Promise<string> => {
 
 export const anonymous = async (args?: string[]): Promise<string> => {
   return `Anonymous est un collectif décentralisé de hackers et d'activistes en ligne connu pour ses attaques contre diverses organisations, gouvernements, et entreprises. Leur objectif est souvent de défendre la liberté d'expression, la transparence, et la justice sociale. Ils ont mené des cyberattaques contre des cibles telles que Scientologie, Visa, MasterCard, et des sites gouvernementaux de plusieurs pays. Leurs opérations sont généralement caractérisées par l'utilisation de masques de Guy Fawkes et l'anonymat des participants.` }
+
+  export const anonymous2 = async (args?: string[]): Promise<string> => {
+    const imageUrl = '/images/anonymous.jpg';
+    const text = `
+      Anonymous est un collectif décentralisé de hackers et d'activistes en ligne connu pour ses attaques contre diverses organisations, gouvernements, et entreprises. 
+      Leur objectif est souvent de défendre la liberté d'expression, la transparence, et la justice sociale. 
+      Ils ont mené des cyberattaques contre des cibles telles que Scientologie, Visa, MasterCard, et des sites gouvernementaux de plusieurs pays. 
+      Leurs opérations sont généralement caractérisées par l'utilisation de masques de Guy Fawkes et l'anonymat des participants.
+    `;
+  
+    const html = `
+      <div>
+        <img src="${imageUrl}" alt="Anonymous Image" style="width:200px;height:auto;"/>
+        <p>${text}</p>
+      </div>
+    `;
+  
+    return html;
+  };
 
 export const lazarus = async (args?: string[]): Promise<string> => {
   return `Lazarus est un groupe de hackers supposément soutenu par le gouvernement nord-coréen. Ils sont responsables de plusieurs cyberattaques de grande envergure, y compris le piratage de Sony Pictures en 2014, les attaques contre des institutions financières à travers le monde, et le tristement célèbre ransomware WannaCry en 2017. Les activités du groupe Lazarus visent souvent à générer des fonds pour la Corée du Nord, contournant ainsi les sanctions économiques internationales.` }
