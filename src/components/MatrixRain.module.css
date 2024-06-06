@@ -1,0 +1,39 @@
+/* src/components/MatrixRain.module.css */
+.container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: black;
+    z-index: 1000;
+}
+
+.symbol {
+    position: absolute;
+    top: 0;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.2rem;
+    color: #0F0;
+    animation: fall linear infinite;
+    white-space: nowrap;
+}
+
+@keyframes fall {
+    0% {
+        top: -5%;
+        opacity: 1;
+    }
+    50% {
+        opacity: 1;
+    }
+    95% {
+        opacity: 1;
+    }
+    100% {
+        top: 105%;
+        opacity: 0;
+    }
+}
+  
