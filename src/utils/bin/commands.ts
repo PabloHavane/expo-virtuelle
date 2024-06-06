@@ -4,65 +4,22 @@ import * as bin from './index';
 import config from '../../../config.json';
 import { about } from './cmd/cmdAbout';
 
+
+
 // Help
 export const help = async (args: string[]): Promise<string> => {
-  const commands = Object.keys(bin).sort().join(', ');
-  var c = '';
-  for (let i = 1; i <= Object.keys(bin).sort().length; i++) {
-    if (i % 7 === 0) {
-      c += Object.keys(bin).sort()[i - 1] + '\n';
-    } else {
-      c += Object.keys(bin).sort()[i - 1] + ' ';
-    }
-  }
-  return `Welcome! Here are all the available commands:
-\n${c}\n
-[tab]: trigger completion.
-[ctrl+l]/clear: clear terminal.\n
-Type 'sumfetch' to display summary.
+  const commands = Object.keys(bin).sort().join(', ');  
+  return `Bienvenue, voici la liste des commandes : 
+  draper hotz mckinnon mitnick poulsen anonymous lazarus mafiaboy dragon sandworm bear help sumfetch
+
+[ctrl+l]/clear: clear le terminal.\n
+Utilisez 'sumfetch' pour afficher le résumé.
 `;
 };
 
-// Redirection
-export const repo = async (args: string[]): Promise<string> => {
-  window.open(`${config.repo}`);
-  return 'Opening Github repository...';
-};
 
 // About
 export { about };
-
-export const resume = async (args: string[]): Promise<string> => {
-  window.open(`${config.resume_url}`);
-  return 'Opening resume...';
-};
-
-// Donate
-export const donate = async (args: string[]): Promise<string> => {
-  return `thank you for your interest. 
-here are the ways you can support my work:
-- <u><a class="text-light-blue dark:text-dark-blue underline" href="${config.donate_urls.paypal}" target="_blank">paypal</a></u>
-- <u><a class="text-light-blue dark:text-dark-blue underline" href="${config.donate_urls.patreon}" target="_blank">patreon</a></u>
-`;
-};
-
-// Contact
-export const email = async (args: string[]): Promise<string> => {
-  window.open(`mailto:${config.email}`);
-  return `Opening mailto:${config.email}...`;
-};
-
-export const github = async (args: string[]): Promise<string> => {
-  window.open(`https://github.com/${config.social.github}/`);
-
-  return 'Opening github...';
-};
-
-export const linkedin = async (args: string[]): Promise<string> => {
-  window.open(`https://www.linkedin.com/in/${config.social.linkedin}/`);
-
-  return 'Opening linkedin...';
-};
 
 // Search
 export const google = async (args: string[]): Promise<string> => {
@@ -70,67 +27,41 @@ export const google = async (args: string[]): Promise<string> => {
   return `Searching google for ${args.join(' ')}...`;
 };
 
-export const duckduckgo = async (args: string[]): Promise<string> => {
-  window.open(`https://duckduckgo.com/?q=${args.join(' ')}`);
-  return `Searching duckduckgo for ${args.join(' ')}...`;
+export const draper = async (args?: string[]): Promise<string> => {
+  return `John Draper, surnommé "Captain Crunch", est un pionnier du hacking. Né en 1943, il a découvert qu'un sifflet trouvé dans une boîte de céréales Cap'n Crunch pouvait produire une tonalité utilisée pour manipuler le système téléphonique et passer des appels longue distance gratuits. Draper a ensuite développé le "blue box", un dispositif électronique permettant de contrôler le réseau téléphonique, influençant ainsi des figures comme Steve Wozniak et Steve Jobs. Malgré ses contributions techniques, Draper a rencontré des problèmes juridiques et a été emprisonné pour ses activités de phone phreaking. Il a également développé des logiciels informatiques, notamment EasyWriter, l'un des premiers traitements de texte pour l'Apple II. Draper est reconnu comme une figure clé de la culture du hacking et de la sécurité informatique, ayant laissé un héritage important malgré ses démêlés avec la loi.`;
 };
 
-export const bing = async (args: string[]): Promise<string> => {
-  window.open(`https://bing.com/search?q=${args.join(' ')}`);
-  return `Wow, really? You are using bing for ${args.join(' ')}?`;
-};
+export const hotz = async (args?: string[]): Promise<string> => {
+  return `George Hotz, également connu sous le pseudonyme "geohot", est célèbre pour être le premier à avoir réalisé un jailbreak de l'iPhone en 2007, permettant ainsi aux utilisateurs de contourner les restrictions d'Apple et d'installer des applications non autorisées. Il a également été impliqué dans le piratage de la PlayStation 3, ce qui lui a valu des poursuites judiciaires de la part de Sony. Hotz est considéré comme un prodige du hacking et a travaillé par la suite sur des projets de conduite autonome et d'intelligence artificielle.` }
 
-export const reddit = async (args: string[]): Promise<string> => {
-  window.open(`https://www.reddit.com/search/?q=${args.join(' ')}`);
-  return `Searching reddit for ${args.join(' ')}...`;
-};
+export const mckinnon = async (args?: string[]): Promise<string> => { 
+  return `Gary McKinnon est un hacker britannique qui est devenu célèbre pour avoir pénétré les systèmes informatiques de la NASA et du Pentagone entre 2001 et 2002. McKinnon cherchait des informations sur les ovnis et les technologies extraterrestres qu'il croyait être dissimulées par le gouvernement américain. Accusé d'avoir causé des dommages importants, McKinnon a fait face à une demande d'extradition vers les États-Unis, mais celle-ci a été bloquée par le Royaume-Uni pour des raisons de santé et de droits de l'homme.` }
 
-// Typical linux commands
-export const echo = async (args: string[]): Promise<string> => {
-  return args.join(' ');
-};
+export const mitnick = async (args?: string[]): Promise<string> => { 
+  return `Kevin Mitnick est l'un des hackers les plus célèbres de l'histoire. Dans les années 1980 et 1990, il a infiltré des réseaux informatiques de grandes entreprises et agences gouvernementales, volé des logiciels et des données sensibles, et a été l'objet d'une chasse à l'homme massive par le FBI. Après son arrestation en 1995, il a été emprisonné pendant près de cinq ans. Libéré en 2000, Mitnick est devenu consultant en sécurité informatique et auteur, partageant son expertise pour aider à prévenir les cybercrimes` }
 
-export const whoami = async (args: string[]): Promise<string> => {
-  return `${config.ps1_username}`;
-};
+export const poulsen = async (args?: string[]): Promise<string> => {
+  return `Kevin Poulsen, également connu sous le pseudonyme "Dark Dante", a gagné en notoriété dans les années 1980 pour ses exploits en piratage téléphonique. Il est surtout connu pour avoir manipulé les lignes téléphoniques d'une station de radio pour gagner une Porsche 944 S2 lors d'un concours. Après plusieurs années de fuite, il a été arrêté en 1991 et a purgé une peine de prison. Depuis sa libération, Poulsen est devenu journaliste et rédacteur en chef de Wired, se concentrant sur des sujets de cybercriminalité et de sécurité informatique.` }
 
-export const ls = async (args: string[]): Promise<string> => {
-  return `a
-bunch
-of
-fake
-directories`;
-};
+export const anonymous = async (args?: string[]): Promise<string> => {
+  return `Anonymous est un collectif décentralisé de hackers et d'activistes en ligne connu pour ses attaques contre diverses organisations, gouvernements, et entreprises. Leur objectif est souvent de défendre la liberté d'expression, la transparence, et la justice sociale. Ils ont mené des cyberattaques contre des cibles telles que Scientologie, Visa, MasterCard, et des sites gouvernementaux de plusieurs pays. Leurs opérations sont généralement caractérisées par l'utilisation de masques de Guy Fawkes et l'anonymat des participants.` }
 
-export const cd = async (args: string[]): Promise<string> => {
-  return `unfortunately, i cannot afford more directories.
-if you want to help, you can type 'donate'.`;
-};
+export const lazarus = async (args?: string[]): Promise<string> => {
+  return `Lazarus est un groupe de hackers supposément soutenu par le gouvernement nord-coréen. Ils sont responsables de plusieurs cyberattaques de grande envergure, y compris le piratage de Sony Pictures en 2014, les attaques contre des institutions financières à travers le monde, et le tristement célèbre ransomware WannaCry en 2017. Les activités du groupe Lazarus visent souvent à générer des fonds pour la Corée du Nord, contournant ainsi les sanctions économiques internationales.` }
 
-export const date = async (args: string[]): Promise<string> => {
-  return new Date().toString();
-};
+export const mafiaboy = async (args?: string[]): Promise<string> => { 
+  return `Michael Calce, connu sous le pseudonyme "Mafiaboy", est un hacker canadien qui a attiré l'attention internationale en 2000, à l'âge de 15 ans, pour avoir lancé des attaques par déni de service (DDoS) contre des sites majeurs tels que Yahoo!, eBay, et CNN. Ces attaques ont temporairement paralysé des parties importantes de l'internet. Après son arrestation, il a été jugé et a purgé une peine de prison pour mineurs. Depuis, Calce est devenu consultant en sécurité et un défenseur de la cybersécurité.` }
 
-export const vi = async (args: string[]): Promise<string> => {
-  return `woah, you still use 'vi'? just try 'vim'.`;
-};
+export const dragon = async (args?: string[]): Promise<string> => { 
+  return `Double Dragon est un terme qui se réfère à deux groupes de hackers chinois notoires, APT41 (alias Winnti) et APT10. Ces groupes sont connus pour leurs cyberespionnage et activités de cybercriminalité soutenues par l'État. Ils ont ciblé des entreprises et des gouvernements à travers le monde pour voler des données sensibles, des secrets commerciaux et des informations de propriété intellectuelle. Leurs opérations incluent des attaques complexes et prolongées, souvent avec des implications économiques et stratégiques.` }
 
-export const vim = async (args: string[]): Promise<string> => {
-  return `'vim' is so outdated. how about 'nvim'?`;
-};
+export const sandworm = async (args?: string[]): Promise<string> => {
+  return `Sandworm est un groupe de hackers russes lié au GRU, l'agence de renseignement militaire de la Russie. Ils sont responsables de certaines des cyberattaques les plus destructrices de la dernière décennie, y compris les attaques contre le réseau électrique ukrainien, le malware NotPetya qui a causé des milliards de dollars de dommages à l'échelle mondiale, et des campagnes de phishing et de sabotage ciblant divers secteurs. Sandworm se spécialise dans les opérations cybernétiques offensives avec des impacts géopolitiques significatifs.` }
 
-export const nvim = async (args: string[]): Promise<string> => {
-  return `'nvim'? too fancy. why not 'emacs'?`;
-};
+export const bear = async (args?: string[]): Promise<string> => {
+  return `Fancy Bear, également connu sous les noms APT28 ou Sofacy, est un autre groupe de hackers russes associé au GRU. Ils sont connus pour leurs cyberespionnage et campagnes de désinformation, ciblant principalement les gouvernements, les militaires, les médias et les organisations politiques. Fancy Bear est notamment impliqué dans le piratage des emails du Comité national démocrate pendant l'élection présidentielle américaine de 2016, ainsi que dans des attaques contre des institutions en Europe et en Asie. Leurs opérations visent souvent à influencer les affaires politiques et militaires mondiales.` }
 
-export const emacs = async (args?: string[]): Promise<string> => {
-  return `you know what? just use vscode.`;
-};
 
-export const sudo = async (args?: string[]): Promise<string> => {
-  window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ', '_blank'); // ...I'm sorry
-  return `Permission denied: with little power comes... no responsibility? `;
-};
 
 // Banner
 export const banner = (args?: string[]): string => {
@@ -151,7 +82,7 @@ export const banner = (args?: string[]): string => {
 
 Exposition virtuelle réalisée par ${config.name}.
 
-Type 'help' to see the list of available commands.
-Type 'sumfetch' to display summary.
+Utilisez 'help' pour obtenir la liste des commandes disponibles
+Utilisez 'sumfetch' pour obtenir un résumé.
 `;
 };
