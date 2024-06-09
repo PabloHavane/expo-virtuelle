@@ -10,17 +10,17 @@ import MatrixRain from '../../components/MatrixRain';
 // Help
 export const help = async (args: string[]): Promise<string> => {
   const commands = Object.keys(bin).sort().join(', ');  
-  return `Bienvenue, voici la liste des commandes : 
+  return `...Bienvenue, voici la liste des commandes : 
 
-Hackeurs :
+ Hackeurs :
 draper hotz mckinnon mitnick poulsen anonymous lazarus 
 mafiaboy dragon sandworm bear mysterious 
 
-Autres :
+ Autres :
 help sumfetch google<votre recherche> news parrot
 
-[ctrl+l]/clear: clear le terminal.\n
-Utilisez 'sumfetch' pour afficher le résumé.
+ Clear/[Ctrl+l]: clear le terminal.\n
+ K
 `;
 };
 
@@ -251,7 +251,7 @@ export const banner = (args?: string[]): string => {
 
 Exposition virtuelle réalisée par ${config.name}.
 
-Utilisez 'help' pour obtenir la liste des commandes disponibles
-Utilisez 'sumfetch' pour obtenir un résumé.
+Tapez 'help' pour obtenir la liste des commandes disponibles
+Tapez 'sumfetch' pour obtenir un résumé.
 `;
 };
