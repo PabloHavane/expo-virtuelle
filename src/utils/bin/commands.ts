@@ -16,10 +16,11 @@ draper hotz mckinnon mitnick poulsen anonymous lazarus
 mafiaboy dragon sandworm bear mysterious 
 
  Autres :
-help sumfetch google[votre recherche] news parrot
+help sumfetch google[votre recherche] news parrot banner
 
  Clear/[Ctrl+l]: clear le terminal.\n
- K
+ K 
+ [Tab] : auto-complétion des commandes.\n
 `;
 };
 
@@ -244,5 +245,6 @@ Exposition virtuelle réalisée par ${config.name}.
 
 Tapez 'help' pour obtenir la liste des commandes disponibles
 Tapez 'sumfetch' pour obtenir plus d'informations sur l'exposition.
+Tapez 'banner' pour afficher à nouveau cette bannière.
 `;
 };
