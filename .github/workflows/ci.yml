@@ -24,5 +24,21 @@ jobs:
     - name: Install dependencies
       run: npm install
 
+  test:
+    runs-on: ubuntu-latest
+    needs: build  # Exécuter les tests seulement après le build
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '14'
+
+    - name: Install dependencies
+      run: npm install
+
     - name: Run tests
       run: npm test
